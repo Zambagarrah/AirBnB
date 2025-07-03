@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aitbnb Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* --- Global Styles --- */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f2f2f2;
+      color: #333;
+    }
+    header, footer {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
+      margin-left: 1rem;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #0056b3;
+    }
+
+    /* --- Animations --- */
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: #e5f0ff;
+    }
+    .search-bar input, .search-bar button {
+      padding: 0.75rem;
+      margin: 0.5rem;
+      border: 1px solid #ccc;
+    }
+    .search-bar button {
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .search-bar button:hover {
+      background: #0056b3;
+    }
+
+    /* --- Listings --- */
+    .listing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .listing-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .listing-card:hover {
+      transform: translateY(-5px);
+    }
+    .listing-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* --- Forms --- */
+    .form-section {
+      padding: 2rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      background: #28a745;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background: #218838;
+    }
+
+    footer {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 🏠 INDEX PAGE (Home) -->
+<header>
+  <div><strong>Aitbnb</strong></div>
+  <nav>
+    <a href="#login">Login</a>
+    <a href="#signup">Sign Up</a>
+  </nav>
+</header>
+
+<section class="hero fade-in" id="home">
+  <h1>Find your perfect stay</h1>
+  <p>Book unique homes and experiences around Kenya.</p>
+  <div class="search-bar">
+    <input type="text" placeholder="Where are you going?" />
+    <input type="date" />
+    <input type="date" />
+    <button onclick="alert('Searching...')">Search</button>
+  </div>
+</section>
+
+<!-- 📍 LISTINGS PAGE -->
+<!-- Simulated listing grid -->
+<section id="listings" class="listing-grid fade-in">
+  <div class="listing-card">
+    <img src="https://source.unsplash.com/400x300/?house" alt="House" />
+    <h3>Cozy Beach House</h3>
+    <p>Mombasa</p>
+  </div>
+  <div class="listing-card">
+    <img src="https://source.unsplash.com/400x300/?cabin" alt="Cabin" />
+    <h3>Forest Cabin</h3>
+    <p>Naivasha</p>
+  </div>
+</section>
+
+<!-- 🏡 LISTING DETAIL PAGE -->
+<section id="listing-detail" class="form-section fade-in">
+  <h2>Listing: Cozy Beach House</h2>
+  <p>Located near the ocean with amazing views and Wi-Fi.</p>
+  <p>Price: KES 10,000/night</p>
+  <button onclick="window.location='#booking'">Book Now</button>
+</section>
+
+<!-- 📅 BOOKING PAGE -->
+<section id="booking" class="form-section fade-in">
+  <h2>Booking Form</h2>
+  <div class="form-group">
+    <label>Check-in Date:</label>
+    <input type="date" />
+  </div>
+  <div class="form-group">
+    <label>Check-out Date:</label>
+    <input type="date" />
+  </div>
+  <div class="form-group">
+    <label>Guests:</label>
+    <select>
+      <option>1</option>
+      <option>2</option>
+      <option>3+</option>
+    </select>
+  </div>
+  <button onclick="window.location='#confirmation'">Confirm Booking</button>
+</section>
+
+<!-- ✅ CONFIRMATION PAGE -->
+<section id="confirmation" class="form-section fade-in">
+  <h2>Booking Confirmed!</h2>
+  <p>Your stay has been reserved. Thank you for choosing Aitbnb.</p>
+</section>
+
+<!-- 🔐 LOGIN PAGE -->
+<section id="login" class="form-section fade-in">
+  <h2>Login</h2>
+  <div class="form-group">
+    <label>Email:</label>
+    <input type="email" />
+  </div>
+  <div class="form-group">
+    <label>Password:</label>
+    <input type="password" />
+  </div>
+  <button>Log In</button>
+</section>
+
+<!-- 🆕 SIGN-UP PAGE -->
+<section id="signup" class="form-section fade-in">
+  <h2>Create Account</h2>
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" />
+  </div>
+  <div class="form-group">
+    <label>Email:</label>
+    <input type="email" />
+  </div>
+  <div class="form-group">
+    <label>Password:</label>
+    <input type="password" />
+  </div>
+  <button>Sign Up</button>
+</section>
+
+<!-- 🧾 FOOTER -->
+<footer>
+  <p>&copy; 2025 Aitbnb • Designed with ❤️ in Kenya</p>
+</footer>
+
+</body>
+</html>

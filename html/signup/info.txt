@@ -1,0 +1,2 @@
+- Input fields for email, password
+- Simple authentication logic using JavaScript
