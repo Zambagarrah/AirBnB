@@ -1,9 +1,0 @@
- How to Build Step-by-Step
-- Set up basic HTML structure in each page.
-- Design layout using CSS, create reusable components like cards and buttons.
-- Implement interactivity with JS:
-- Booking logic
-- Form validation
-- Search functionality
-- Link all pages together using buttons and anchors.
-- Test responsiveness on various screen sizes.

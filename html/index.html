@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Airbnb Clone - Multi-Section SPA</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" id="nav-home">Airbnb</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center" id="nav-links">
+          <li class="nav-item me-3"><a class="nav-link" data-section="home">Home</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="listings">Listings</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="testimonials">Testimonials</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="about">About Us</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="contact">Contact Us</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="host">Host Dashboard</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="booking">Booking</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="faq">FAQ</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="privacy">Privacy & Terms</a></li>
+          <li class="nav-item me-3">
+            <a href="/html/forms/login.html" class="nav-link d-flex align-items-center" title="Login" aria-label="Login">
+              <!-- User icon SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="margin-right: 6px;">
+                <path d="M13.468 12.37C12.758 11.226 11.56 10.5 10 10.5c-1.56 0-2.758.726-3.468 1.87A6.987 6.987 0 0 1 2 8a6.987 6.987 0 0 1 4.532-6.37C7.242 3.774 8.44 4.5 10 4.5c1.56 0 2.758-.726 3.468-1.87A6.987 6.987 0 0 1 14 8a6.987 6.987 0 0 1-.532 4.37z"/>
+                <path fill-rule="evenodd" d="M8 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+              </svg>
+              Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <button id="darkModeToggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">🌙</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sections -->
+
+  <!-- Home -->
+  <section id="home" class="active" role="main" aria-label="Home page">
+    <div class="search-section">
+      <div class="overlay"></div>
+      <h1>Find your next stay</h1>
+      <form class="search-bar" id="searchForm" aria-label="Search stays form">
+        <select id="location" name="location" class="form-select" required aria-required="true" aria-describedby="locationHelp">
+          <option value="" disabled selected>Select a town in Mombasa</option>
+          <option value="Mombasa Central">Mombasa Central</option>
+          <option value="Nyali">Nyali</option>
+          <option value="Kisauni">Kisauni</option>
+          <option value="Likoni">Likoni</option>
+          <option value="Changamwe">Changamwe</option>
+          <option value="Tudor">Tudor</option>
+          <option value="Mtwapa">Mtwapa</option>
+          <option value="Bamburi">Bamburi</option>
+        </select>
+
+        <input type="date" id="checkin" name="checkin" required aria-required="true" placeholder="Check-in" />
+        <input type="date" id="checkout" name="checkout" required aria-required="true" placeholder="Check-out" />
+        <input type="number" id="guests" name="guests" placeholder="Guests" min="1" value="1" required aria-required="true" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="listings" aria-label="Popular stays">
+      <h2 class="mb-4 text-center">Popular stays</h2>
+      <div class="d-flex flex-wrap justify-content-center gap-4" id="listingsContainer">
+        <!-- Listings loaded here -->
+      </div>
+    </div>
+
+    <div class="about-section" aria-label="About this site">
+      <h2>About Our Airbnb Clone</h2>
+      <p>
+        This is a simple Airbnb-style website built with HTML, CSS, and JavaScript. It features a responsive design,
+        dynamic listings, and a dark mode toggle for your convenience. Explore stays, search by location and dates,
+        and enjoy a clean, modern interface inspired by Airbnb.
+      </p>
+    </div>
+  </section>
+
+  <!-- Listings -->
+  <section id="listings" role="main" aria-label="Listings page">
+    <h1>All Listings</h1>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="listing-card" tabindex="0" role="article" aria-label="Modern Apartment in City Center">
+          <img src="https://source.unsplash.com/600x400/?apartment" alt="Modern Apartment in City Center" class="listing-img" />
+          <div class="listing-info">
+            <div class="listing-title">Modern Apartment in City Center</div>
+            <div class="listing-price">$120 / night</div>
+            <div class="listing-rating">⭐ 4.8 (120 reviews)</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="listing-card" tabindex="0" role="article" aria-label="Cozy Country House">
+          <img src="https://source.unsplash.com/600x400/?house" alt="Cozy Country House" class="listing-img" />
+          <div class="listing-info">
+            <div class="listing-title">Cozy Country House</div>
+            <div class="listing-price">$95 / night</div>
+            <div class="listing-rating">⭐ 4.6 (80 reviews)</div>
+          </div>
+        </div>
+      </div>
+      <!-- Add more listings here -->
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" role="main" aria-label="Testimonials page">
+    <h1>What Our Guests Say</h1>
+    <div class="testimonial" tabindex="0" aria-label="Testimonial from Alice">
+      <p>"Amazing stay! The apartment was clean, cozy, and close to the beach. Highly recommend!"</p>
+      <div class="author">- Alice M.</div>
+    </div>
+    <div class="testimonial" tabindex="0" aria-label="Testimonial from John">
+      <p>"Great host and beautiful location. The booking process was smooth and easy."</p>
+      <div class="author">- John K.</div>
+    </div>
+    <div class="testimonial" tabindex="0" aria-label="Testimonial from Fatima">
+      <p>"Loved the villa with the pool. Perfect for family vacations and relaxing weekends."</p>
+      <div class="author">- Fatima S.</div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" role="main" aria-label="About us page">
+    <h1>About Us</h1>
+    <p>Welcome to our Airbnb clone! We are passionate about connecting travelers with unique and comfortable stays in beautiful locations.</p>
+    <p>Our mission is to provide a seamless booking experience with a wide variety of listings tailored to your needs.</p>
+    <p>We value trust, safety, and community, and we strive to make every stay memorable.</p>
+  </section>
+
+  <!-- Contact Us -->
+  <section id="contact" role="main" aria-label="Contact us page">
+    <h1>Contact Us</h1>
+    <form id="contactForm" aria-label="Contact form">
+      <label for="name">Name</label>
+      <input type="text" id="name" class="form-control mb-3" required aria-required="true" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control mb-3" required aria-required="true" />
+
+      <label for="message">Message</label>
+      <textarea id="message" class="form-control mb-3" rows="5" required aria-required="true"></textarea>
+
+      <button type="submit" class="btn btn-primary w-100">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Host Dashboard -->
+  <section id="host" role="main" aria-label="Host dashboard page">
+    <h1>Host Dashboard</h1>
+    <p>Welcome, host! Here you will be able to manage your listings, bookings, and profile.</p>
+    <p><em>(This is a placeholder page. Backend integration coming soon.)</em></p>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" role="main" aria-label="Booking and payment page">
+    <h1>Booking & Payment</h1>
+    <p>This page will allow users to review their booking details and securely process payments.</p>
+    <p><em>(This is a placeholder page. Backend integration coming soon.)</em></p>
+    <button class="btn btn-primary">Proceed to Payment</button>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" role="main" aria-label="Frequently asked questions page">
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-item">
+      <div class="faq-question" tabindex="0">How do I book a stay?</div>
+      <div class="faq-answer">Select your desired dates and location, then choose a listing and follow the booking instructions.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" tabindex="0">What is the cancellation policy?</div>
+      <div class="faq-answer">Cancellation policies vary by listing. Please check the policy on the listing page before booking.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" tabindex="0">How do I become a host?</div>
+      <div class="faq-answer">Sign up and visit the Host Dashboard to list your property and manage bookings.</div>
+    </div>
+  </section>
+
+  <!-- Privacy & Terms -->
+  <section id="privacy" role="main" aria-label="Privacy policy and terms page">
+    <h1>Privacy Policy & Terms of Service</h1>
+    <h2>Privacy Policy</h2>
+    <p>Your privacy is important to us. We collect minimal personal information necessary to provide our services.</p>
+    <p>We do not share your data with third parties without your consent.</p>
+    <h2>Terms of Service</h2>
+    <p>By using this site, you agree to our terms and conditions. Please read them carefully before booking.</p>
+    <p>We reserve the right to update these terms at any time.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer mt-5">
+    <div>
+      <div class="row">
+        <div class="col-6 col-md-3 mb-4">
+          <h6 class="footer-title">Inspiration for future getaways</h6>
+          <ul class="footer-list">
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Arts & culture</a></li>
+            <li><a href="#">Beach</a></li>
+            <li><a href="#">Mountains</a></li>
+            <li><a href="#">Outdoors</a></li>
+            <li><a href="#">Things to do</a></li>
+            <li><a href="#">Unique stays</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+          <h6 class="footer-title">Travel categories</h6>
+          <ul class="footer-list">
+            <li><a href="#">Vacation rentals</a></li>
+            <li><a href="#">Apartment rentals</a></li>
+            <li><a href="#">Villa rentals</a></li>
+            <li><a href="#">Condo rentals</a></li>
+            <li><a href="#">Cabin rentals</a></li>
+            <li><a href="#">Cottage rentals</a></li>
+            <li><a href="#">Beachfront rentals</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+          <h6 class="footer-title">Support</h6>
+          <ul class="footer-list">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Cancellation options</a></li>
+            <li><a href="#">Neighborhood Support</a></li>
+            <li><a href="#">Trust & Safety</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">COVID-19 Response</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+          <h6 class="footer-title">About Us</h6>
+          <ul class="footer-list">
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Terms & Privacy</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="d-flex justify-content-between align-items-center pt-3 flex-column flex-md-row">
+        <small>© 2025 Airbnb Clone. All rights reserved.</small>
+        <div class="mt-2 mt-md-0">
+          <a href="#" class="footer-link me-3">Privacy</a>
+          <a href="#" class="footer-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>
