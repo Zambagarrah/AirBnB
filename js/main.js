@@ -1,11 +1,11 @@
 // Listings data for home page
     const listings = [
-      { img: 'https://source.unsplash.com/400x300/?apartment', title: 'Modern Apartment in City Center', price: 120, rating: 4.8, reviews: 120 },
-      { img: 'https://source.unsplash.com/400x300/?house', title: 'Cozy Country House', price: 95, rating: 4.6, reviews: 80 },
-      { img: 'https://source.unsplash.com/400x300/?villa', title: 'Luxury Villa with Pool', price: 300, rating: 4.9, reviews: 45 },
-      { img: 'https://source.unsplash.com/400x300/?cabin', title: 'Rustic Cabin in the Woods', price: 85, rating: 4.7, reviews: 60 },
-      { img: 'https://source.unsplash.com/400x300/?loft', title: 'Stylish Loft Apartment', price: 150, rating: 4.9, reviews: 75 },
-      { img: 'https://source.unsplash.com/400x300/?bungalow', title: 'Beachfront Bungalow', price: 220, rating: 4.8, reviews: 90 }
+      { img: '../assets/listing1.webp', title: 'Modern Apartment', price: 10000, rating: 4.8, reviews: 120 },
+      { img: '../assets/listing2.webp', title: 'Cozy Country House', price: 9500, rating: 4.6, reviews: 80 },
+      { img: '../assets/listing3.webp', title: 'Luxury Villa with Pool', price: 30000, rating: 4.9, reviews: 45 },
+      { img: '../assets/listing4.webp', title: 'Rustic Cabin in the Woods', price: 8500, rating: 4.7, reviews: 60 },
+      { img: '../assets/listing5.webp', title: 'Stylish Loft Apartment', price: 15000, rating: 4.9, reviews: 75 },
+      { img: '../assets/listing6.webp', title: 'Beachfront Bungalow', price: 22000, rating: 4.8, reviews: 90 }
     ];
 
     const listingsContainer = document.getElementById('listingsContainer');
@@ -21,7 +21,7 @@
         <img src="${listing.img}" alt="${listing.title}" class="listing-img" />
         <div class="listing-info">
           <div class="listing-title">${listing.title}</div>
-          <div class="listing-price">$${listing.price} / night</div>
+          <div class="listing-price">KSH${listing.price} / night</div>
           <div class="listing-rating" aria-label="Rating">${'⭐'.repeat(Math.round(listing.rating))} (${listing.rating.toFixed(1)})</div>
         </div>
       `;

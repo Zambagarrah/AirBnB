@@ -134,7 +134,7 @@
     /* Hero Section */
     #home .search-section {
       position: relative;
-      background: url('https://source.unsplash.com/1920x700/?travel,home') center/cover no-repeat;
+      background: url('../assets/hero-section.webp') center/cover no-repeat;
       height: 320px;
       max-width: 1200px;
       margin: 3rem auto;
