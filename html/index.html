@@ -19,14 +19,14 @@
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto align-items-center" id="nav-links">
           <li class="nav-item me-3"><a class="nav-link" data-section="home">Home</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="about">About Us</a></li>
           <li class="nav-item me-3"><a class="nav-link" data-section="listings">Listings</a></li>
           <li class="nav-item me-3"><a class="nav-link" data-section="testimonials">Testimonials</a></li>
-          <li class="nav-item me-3"><a class="nav-link" data-section="about">About Us</a></li>
-          <li class="nav-item me-3"><a class="nav-link" data-section="contact">Contact Us</a></li>
-          <li class="nav-item me-3"><a class="nav-link" data-section="host">Host Dashboard</a></li>
           <li class="nav-item me-3"><a class="nav-link" data-section="booking">Booking</a></li>
           <li class="nav-item me-3"><a class="nav-link" data-section="faq">FAQ</a></li>
-          <li class="nav-item me-3"><a class="nav-link" data-section="privacy">Privacy & Terms</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="host">Host Dashboard</a></li>
+          <li class="nav-item me-3"><a class="nav-link" data-section="contact">Contact Us</a></li>
+
           <li class="nav-item me-3">
             <a href="/html/forms/login.html" class="nav-link d-flex align-items-center" title="Login" aria-label="Login">
               <!-- User icon SVG -->
@@ -42,7 +42,7 @@
           </li>
         </ul>
       </div>
-    </div>7
+    </div>
   </nav>
 
   <!-- Sections -->
@@ -78,11 +78,9 @@
     </div>
 
     <div class="about-section" aria-label="About this site">
-      <h2>About Our Airbnb Clone</h2>
+      <h2>About Our Airbnb</h2>
       <p>
-        This is a simple Airbnb-style website built with HTML, CSS, and JavaScript. It features a responsive design,
-        dynamic listings, and a dark mode toggle for your convenience. Explore stays, search by location and dates,
-        and enjoy a clean, modern interface inspired by Airbnb.
+        Discover your perfect getaway with our sleek Airbnb-inspired website, crafted using HTML, CSS, and JavaScript. Enjoy a fully responsive design that adapts seamlessly to any device, featuring dynamic, visually-rich listings that bring each stay to life. Effortlessly search by location and dates to find accommodations tailored to your needs. Plus, switch to dark mode for a comfortable browsing experience anytime. Experience a clean, modern interface thoughtfully designed to make your journey from browsing to booking smooth and enjoyable.
       </p>
     </div>
   </section>
@@ -91,152 +89,250 @@
   <section id="listings" role="main" aria-label="Listings page">
     <h1>All Listings</h1>
     <div class="listings-grid">
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing1.webp" alt="Sunset Villa" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
+          <h3 class="listing-title">Sunset Villa</h3>
+          <p class="listing-location">Diani Beach, Kwale County</p>
+          <p class="listing-price">KSh 12,000 / night</p>
           <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
         </div>
-      </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
-        <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+        <div class="listing-expanded">
+          <p>Spacious 3-bedroom villa with ocean views, private pool, and direct beach access.</p>
+          <p><strong>Amenities:</strong> WiFi, Air Conditioning, Private Pool, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing2.webp" alt="Coral Reef Apartment" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Coral Reef Apartment</h3>
+          <p class="listing-location">Nyali, Mombasa</p>
+          <p class="listing-price">KSh 8,500 / night</p>
+          <p class="listing-rating">⭐ 4.6 (98 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Modern 2-bedroom apartment with sea breeze, close to shopping and dining.</p>
+          <p><strong>Amenities:</strong> WiFi, Parking, Elevator</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing3.webp" alt="Palm Breeze Cottage" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Palm Breeze Cottage</h3>
+          <p class="listing-location">Tiwi Beach, Kwale County</p>
+          <p class="listing-price">KSh 9,000 / night</p>
+          <p class="listing-rating">⭐ 4.7 (110 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Cozy 2-bedroom cottage surrounded by palm trees, steps from the beach.</p>
+          <p><strong>Amenities:</strong> WiFi, Kitchen, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing4.webp" alt="Seaside Retreat" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Seaside Retreat</h3>
+          <p class="listing-location">Bamburi, Mombasa</p>
+          <p class="listing-price">KSh 10,500 / night</p>
+          <p class="listing-rating">⭐ 4.9 (130 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Elegant 3-bedroom house with garden, near Bamburi beach and local attractions.</p>
+          <p><strong>Amenities:</strong> WiFi, Air Conditioning, Garden, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing5.webp" alt="Ocean View Apartment" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Ocean View Apartment</h3>
+          <p class="listing-location">Shanzu, Mombasa</p>
+          <p class="listing-price">KSh 11,000 / night</p>
+          <p class="listing-rating">⭐ 4.5 (90 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Bright 2-bedroom apartment with panoramic ocean views and balcony.</p>
+          <p><strong>Amenities:</strong> WiFi, Balcony, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing6.webp" alt="Mtwapa Beach House" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Mtwapa Beach House</h3>
+          <p class="listing-location">Mtwapa, Kilifi County</p>
+          <p class="listing-price">KSh 13,000 / night</p>
+          <p class="listing-rating">⭐ 4.8 (115 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Luxury 4-bedroom house with private beach access and spacious garden.</p>
+          <p><strong>Amenities:</strong> WiFi, Private Beach, Pool, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing1.webp" alt="Lagoon Breeze Bungalow" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Lagoon Breeze Bungalow</h3>
+          <p class="listing-location">Kilifi Creek, Kilifi County</p>
+          <p class="listing-price">KSh 9,500 / night</p>
+          <p class="listing-rating">⭐ 4.7 (105 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Charming 2-bedroom bungalow overlooking the lagoon with a private deck.</p>
+          <p><strong>Amenities:</strong> WiFi, Kitchen, Deck, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing2.webp" alt="Coral Garden Villa" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Coral Garden Villa</h3>
+          <p class="listing-location">Diani Beach, Kwale County</p>
+          <p class="listing-price">KSh 14,000 / night</p>
+          <p class="listing-rating">⭐ 4.9 (140 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Elegant 4-bedroom villa with lush gardens and walking distance to the beach.</p>
+          <p><strong>Amenities:</strong> WiFi, Pool, Garden, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing3.webp" alt="Blue Lagoon Apartment" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Blue Lagoon Apartment</h3>
+          <p class="listing-location">Nyali, Mombasa</p>
+          <p class="listing-price">KSh 9,000 / night</p>
+          <p class="listing-rating">⭐ 4.6 (95 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Modern 1-bedroom apartment with lagoon views and a balcony.</p>
+          <p><strong>Amenities:</strong> WiFi, Balcony, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing4.webp" alt="Seashell Cottage" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Seashell Cottage</h3>
+          <p class="listing-location">Tiwi Beach, Kwale County</p>
+          <p class="listing-price">KSh 8,800 / night</p>
+          <p class="listing-rating">⭐ 4.7 (85 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Cozy 2-bedroom cottage with garden and walking distance to the beach.</p>
+          <p><strong>Amenities:</strong> WiFi, Garden, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing5.webp" alt="Bamburi Beach House" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Bamburi Beach House</h3>
+          <p class="listing-location">Bamburi, Mombasa</p>
+          <p class="listing-price">KSh 11,500 / night</p>
+          <p class="listing-rating">⭐ 4.8 (125 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Spacious 3-bedroom house with private garden and beach access.</p>
+          <p><strong>Amenities:</strong> WiFi, Garden, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing6.webp" alt="Shanzu Seaview Apartment" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Shanzu Seaview Apartment</h3>
+          <p class="listing-location">Shanzu, Mombasa</p>
+          <p class="listing-price">KSh 10,000 / night</p>
+          <p class="listing-rating">⭐ 4.6 (100 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Modern 2-bedroom apartment with stunning sea views and balcony.</p>
+          <p><strong>Amenities:</strong> WiFi, Balcony, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing1.webp" alt="Mtwapa Lagoon Villa" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Mtwapa Lagoon Villa</h3>
+          <p class="listing-location">Mtwapa, Kilifi County</p>
+          <p class="listing-price">KSh 13,500 / night</p>
+          <p class="listing-rating">⭐ 4.9 (135 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Luxury 4-bedroom villa overlooking the lagoon with private pool.</p>
+          <p><strong>Amenities:</strong> WiFi, Pool, Private Beach, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing2.webp" alt="Diani Palm Villa" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Diani Palm Villa</h3>
+          <p class="listing-location">Diani Beach, Kwale County</p>
+          <p class="listing-price">KSh 14,500 / night</p>
+          <p class="listing-rating">⭐ 5.0 (150 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Exclusive 5-bedroom villa with lush gardens and private pool near the beach.</p>
+          <p><strong>Amenities:</strong> WiFi, Pool, Garden, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
-      <div class="listing-card">
-        <img src="../assets/listing1.webp" alt="Cozy Beach House" class="listing-image" />
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing3.webp" alt="Nyali Sunset Apartment" class="listing-image" />
         <div class="listing-info">
-          <h3 class="listing-title">Cozy Beach House</h3>
-          <p class="listing-location">Malibu, California</p>
-          <p class="listing-price">$120 / night</p>
-          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+          <h3 class="listing-title">Nyali Sunset Apartment</h3>
+          <p class="listing-location">Nyali, Mombasa</p>
+          <p class="listing-price">KSh 9,500 / night</p>
+          <p class="listing-rating">⭐ 4.7 (110 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Cozy 1-bedroom apartment with sunset views and modern amenities.</p>
+          <p><strong>Amenities:</strong> WiFi, Balcony, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
         </div>
       </div>
+
+      <div class="listing-card" onclick="expandCard(this)">
+        <img src="../assets/listing4.webp" alt="Tiwi Beach House" class="listing-image" />
+        <div class="listing-info">
+          <h3 class="listing-title">Tiwi Beach House</h3>
+          <p class="listing-location">Tiwi Beach, Kwale County</p>
+          <p class="listing-price">KSh 10,200 / night</p>
+          <p class="listing-rating">⭐ 4.8 (120 reviews)</p>
+        </div>
+        <div class="listing-expanded">
+          <p>Beautiful 3-bedroom beach house with garden and private patio.</p>
+          <p><strong>Amenities:</strong> WiFi, Garden, Parking</p>
+          <button onclick="closeExpanded(event)">Close</button>
+        </div>
+      </div>
+
     </div>
+
   </section>
+
 
   <!-- Testimonials -->
   <section id="testimonials" role="main" aria-label="Testimonials page">
@@ -256,12 +352,43 @@
   </section>
 
   <!-- About Us -->
-  <section id="about" role="main" aria-label="About us page">
-    <h1>About Us</h1>
-    <p>Welcome to our Airbnb clone! We are passionate about connecting travelers with unique and comfortable stays in beautiful locations.</p>
-    <p>Our mission is to provide a seamless booking experience with a wide variety of listings tailored to your needs.</p>
-    <p>We value trust, safety, and community, and we strive to make every stay memorable.</p>
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p class="mission-statement">
+        At <strong>AirBnB </strong>, our mission is to help travelers find unique and comfortable stays around the world; making every trip feel like a home away from home.
+      </p>
+
+      <div class="brand-story">
+        <h3>Our Story</h3>
+        <p>
+          Inspired by the spirit of adventure and the desire to connect people with authentic travel experiences, this project was built to showcase how modern web technologies can recreate a seamless booking experience. Whether you’re looking for a cozy beach house or a vibrant city apartment, our platform brings the best stays right to your fingertips.
+        </p>
+      </div>
+
+      <div class="unique-value">
+        <h3>Why Choose Us?</h3>
+        <ul>
+          <li>Easy-to-use interface with powerful search and filtering options.</li>
+          <li>Responsive design that works beautifully on any device.</li>
+          <li>Dark mode support for comfortable browsing day or night.</li>
+          <li>Built with modern web standards for speed and accessibility.</li>
+        </ul>
+      </div>
+
+      <div class="team-intro">
+        <h3>Meet the Creator</h3>
+        <p>
+          Hi, I’m <strong>Lisa (Nyamache Mosweta)</strong>, a passionate web developer dedicated to building user-friendly and scalable web applications. This project represents my commitment to clean design, responsive layouts, and interactive user experiences.
+        </p>
+      </div>
+
+      <div class="cta">
+        <p>Ready to find your next stay? <a href="#listings">Explore our listings now!</a></p>
+      </div>
+    </div>
   </section>
+
 
   <!-- Contact Us -->
   <section id="contact" role="main" aria-label="Contact us page">

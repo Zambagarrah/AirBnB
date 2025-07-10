@@ -330,6 +330,92 @@
   margin: 0.1rem 0;
 }
 
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.listing-card {
+  position: relative;
+  background-color: var(--card-bg, #fff);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.listing-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.listing-info {
+  padding: 1rem;
+}
+
+.listing-title {
+  font-size: 1.2rem;
+  margin: 0 0 0.3rem;
+  color: var(--text-primary, #222);
+}
+
+.listing-location,
+.listing-price,
+.listing-rating {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #555);
+  margin: 0.1rem 0;
+}
+
+/* Expanded card styles */
+.listing-expanded {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 600px;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: var(--card-bg, white);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  cursor: auto;
+}
+
+.listing-card.expanded .listing-expanded {
+  display: block;
+}
+
+.listing-card.expanded {
+  filter: none;
+  pointer-events: none;
+}
+
+.listing-expanded button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary, #ff385c);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
 
     /* Other sections styling */
     /* Testimonials */

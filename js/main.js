@@ -134,4 +134,48 @@
       });
     });
 
+    function expandCard(card) {
+  if (card.classList.contains('expanded')) return;
+
+  // Add overlay
+  const overlay = document.createElement('div');
+  overlay.id = 'overlay';
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+  overlay.style.zIndex = '999';
+  overlay.onclick = () => closeExpanded(null, card, overlay);
+  document.body.appendChild(overlay);
+
+  // Add expanded class to card
+  card.classList.add('expanded');
+
+  // Add blur-background class to listings container
+  const listingsGrid = document.querySelector('.listings-grid');
+  listingsGrid.classList.add('blur-background');
+}
+
+function closeExpanded(event, card = null, overlay = null) {
+  if (event) event.stopPropagation();
+
+  if (!card) {
+    card = document.querySelector('.listing-card.expanded');
+  }
+  if (!overlay) {
+    overlay = document.getElementById('overlay');
+  }
+
+  if (card) card.classList.remove('expanded');
+
+  // Remove blur-background class from listings container
+  const listingsGrid = document.querySelector('.listings-grid');
+  listingsGrid.classList.remove('blur-background');
+
+  if (overlay) overlay.remove();
+}
+
+
     
