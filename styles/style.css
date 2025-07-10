@@ -284,6 +284,53 @@
       font-weight: 600;
     }
 
+    .listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.listing-card {
+  background-color: var(--card-bg, #fff);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.listing-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.listing-info {
+  padding: 1rem;
+}
+
+.listing-title {
+  font-size: 1.2rem;
+  margin: 0 0 0.3rem;
+  color: var(--text-primary, #222);
+}
+
+.listing-location,
+.listing-price,
+.listing-rating {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #555);
+  margin: 0.1rem 0;
+}
+
+
     /* Other sections styling */
     /* Testimonials */
     #testimonials .testimonial {
